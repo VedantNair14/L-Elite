@@ -8,11 +8,11 @@ venv/
 ENV/
 .idea/
 .vscode/
-static/img/*.png
-static/img/*.jpg
-static/img/*.jpeg
-!static/img/hero.png
-!static/img/wagyu.png
-!static/img/scallops.png
-!static/img/gallery1.png
-!static/img/fondant.png
+
+# Allow project images
+!static/img/
+static/img/*
+!static/img/*.png
+!static/img/*.jpg
+!static/img/*.jpeg
+!static/img/*.svg
