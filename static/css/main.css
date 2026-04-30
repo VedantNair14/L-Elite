@@ -42,12 +42,30 @@
     position: fixed;
     pointer-events: none;
     z-index: 10000;
-    transition: transform 0.3s ease-out;
+    transition: transform 0.3s ease-out, background 0.3s, border-radius 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 8px;
+    font-weight: 700;
+    color: var(--primary);
+    overflow: hidden;
 }
 
-.btn:hover ~ .custom-cursor-follower {
-    transform: scale(2);
-    background: rgba(212, 175, 55, 0.1);
+.custom-cursor-follower.hovering {
+    width: 80px;
+    height: 80px;
+    background: var(--accent);
+    border: none;
+}
+
+.custom-cursor-follower.hovering::after {
+    content: attr(data-text);
+}
+
+.menu-item {
+    transform-style: preserve-3d;
+    will-change: transform;
 }
 
 /* Reveal Mask Animation */

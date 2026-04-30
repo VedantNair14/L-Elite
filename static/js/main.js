@@ -29,6 +29,55 @@ document.addEventListener('mousemove', (e) => {
     gsap.to(follower, { x: e.clientX - 15, y: e.clientY - 15, duration: 0.3 });
 });
 
+// Interactive Cursor Text
+document.querySelectorAll('.menu-item, .gallery-card, .btn').forEach(el => {
+    el.addEventListener('mouseenter', () => {
+        follower.classList.add('hovering');
+        if (el.classList.contains('menu-item')) follower.setAttribute('data-text', 'ORDER');
+        if (el.classList.contains('gallery-card')) follower.setAttribute('data-text', 'VIEW');
+    });
+    el.addEventListener('mouseleave', () => {
+        follower.classList.remove('hovering');
+        follower.setAttribute('data-text', '');
+    });
+});
+
+// 3D Tilt Effect
+function applyTilt(e) {
+    const card = e.currentTarget;
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+    const rotateX = (y - centerY) / 10;
+    const rotateY = (centerX - x) / 10;
+
+    gsap.to(card, {
+        rotateX: rotateX,
+        rotateY: rotateY,
+        scale: 1.05,
+        duration: 0.5,
+        ease: 'power2.out',
+        transformPerspective: 1000
+    });
+}
+
+function resetTilt(e) {
+    gsap.to(e.currentTarget, {
+        rotateX: 0,
+        rotateY: 0,
+        scale: 1,
+        duration: 0.5,
+        ease: 'power2.out'
+    });
+}
+
+document.querySelectorAll('.menu-item').forEach(card => {
+    card.addEventListener('mousemove', applyTilt);
+    card.addEventListener('mouseleave', resetTilt);
+});
+
 // Preloader & Hero Entrance
 window.addEventListener('load', () => {
     const tl = gsap.timeline();

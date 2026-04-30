@@ -16,7 +16,7 @@ MENU_DATA = {
     ],
     "desserts": [
         {"id": 7, "name": "Gold Leaf Fondant", "price": 16, "description": "Dark chocolate, edible gold, vanilla bean gelato", "img": "fondant.png"},
-        {"id": 8, "name": "Saffron Panna Cotta", "price": 14, "description": "Infused saffron, honey glaze, toasted pistachios", "img": "pannacotta.html"}
+        {"id": 8, "name": "Saffron Panna Cotta", "price": 14, "description": "Infused saffron, honey glaze, toasted pistachios", "img": "fondant.png"}
     ]
 }
 

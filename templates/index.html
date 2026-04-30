@@ -4,7 +4,12 @@
 
 <!-- Hero Section -->
 <section id="hero" class="hero">
-    <div class="hero-sub" style="color: var(--accent); letter-spacing: 5px; text-transform: uppercase; font-size: 12px; margin-bottom: 20px;" data-aos="fade-down">Est. 1924 | Paris</div>
+<!-- Floating Ornaments -->
+<div class="ornament" style="position: absolute; top: 20%; right: 10%; width: 150px; z-index: 5;" data-parallax-speed="0.2">
+    <img src="{{ url_for('static', filename='img/truffle_float.png') }}" style="width: 100%; opacity: 0.6; filter: blur(2px);">
+</div>
+
+<div class="hero-sub" style="color: var(--accent); letter-spacing: 5px; text-transform: uppercase; font-size: 12px; margin-bottom: 20px;" data-aos="fade-down">Est. 1924 | Paris</div>
     <h1 class="reveal-text">
         <span style="display: block; overflow: hidden;"><span style="display: block;">Elevating Culinary</span></span>
         <span style="display: block; overflow: hidden;"><span style="display: block; color: var(--accent)">Artistry</span></span>
@@ -73,7 +78,10 @@
             <img src="{{ url_for('static', filename='img/wagyu.png') }}" style="width: 100%; height: 100%; object-fit: cover;">
         </div>
         <div class="gallery-card reveal-mask" style="width: 60vw; height: 70vh;">
-            <img src="{{ url_for('static', filename='img/scallops.png') }}" style="width: 100%; height: 100%; object-fit: cover;">
+            <img src="{{ url_for('static', filename='img/lobster.png') }}" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div class="gallery-card reveal-mask" style="width: 60vw; height: 70vh;">
+            <img src="{{ url_for('static', filename='img/pasta.png') }}" style="width: 100%; height: 100%; object-fit: cover;">
         </div>
         <div class="gallery-card reveal-mask" style="width: 60vw; height: 70vh;">
             <img src="{{ url_for('static', filename='img/fondant.png') }}" style="width: 100%; height: 100%; object-fit: cover;">
