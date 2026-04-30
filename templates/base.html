@@ -39,6 +39,46 @@
     <!-- Noise Texture Overlay -->
     <div class="noise"></div>
 
+    <!-- Floating Cart Button -->
+    <div id="cart-trigger" class="cart-btn" onclick="toggleCart()">
+        <span class="cart-count">0</span>
+        🛒
+    </div>
+
+    <!-- Cart Sidebar -->
+    <div id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Your Order</h3>
+            <button onclick="toggleCart()" class="close-btn">&times;</button>
+        </div>
+        <div id="cart-items" class="cart-items">
+            <p style="text-align: center; color: var(--text-secondary); margin-top: 50px;">Your cart is empty.</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total-amount">$0</span>
+            </div>
+            <p style="font-size: 10px; color: var(--accent); margin-bottom: 15px;">✓ FREE HOME DELIVERY INCLUDED</p>
+            <button class="btn" style="width: 100%" onclick="showCheckout()">Checkout</button>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div id="checkout-modal" class="modal-overlay">
+        <div class="modal-content">
+            <h2 class="luxury-font">Delivery Details</h2>
+            <form id="order-form">
+                <input type="text" name="address" placeholder="Delivery Address" required>
+                <input type="tel" name="phone" placeholder="Phone Number" required>
+                <div style="display: flex; gap: 10px; margin-top: 20px;">
+                    <button type="button" class="btn" style="flex: 1; border-color: var(--text-secondary); color: var(--text-secondary);" onclick="closeCheckout()">Cancel</button>
+                    <button type="submit" class="btn" style="flex: 2;">Place Order</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
     <!-- Scroll Progress Indicator -->
     <div id="scroll-progress" style="position: fixed; top: 0; left: 0; width: 0%; height: 3px; background: var(--accent); z-index: 2000;"></div>
 

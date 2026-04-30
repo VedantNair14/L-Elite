@@ -49,9 +49,10 @@
             <div class="menu-item category-{{ category }}" data-aos="fade-up" style="display: {{ 'block' if category == 'starters' else 'none' }}">
                 <div class="menu-item-header">
                     <h3>{{ item.name }}</h3>
-                    <span style="color: var(--accent)">{{ item.price }}</span>
+                    <span style="color: var(--accent)">${{ item.price }}</span>
                 </div>
-                <p>{{ item.description }}</p>
+                <p style="margin-bottom: 15px;">{{ item.description }}</p>
+                <button class="btn" style="padding: 8px 15px; font-size: 10px; width: 100%;" onclick="addToCart({{ item.id }}, '{{ item.name }}', {{ item.price }})">Add to Order</button>
             </div>
             {% endfor %}
         {% endfor %}
